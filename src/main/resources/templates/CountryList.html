@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Country List</title>
+    <link th:href="@{css/main.css}" href="../static/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table class="table table-hover text-left">
+
+    <thead class="table-info">
+    <tr>
+        <th>Count </th>
+        <th>Country Name</th>
+        <th>Continent</th>
+        <th>Details</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="country:${countries}">
+
+        <td th:text="${count}">
+        </td>
+
+        <td th:text="${country.name}"></td>
+        <td th:text="${country.continent}"></td>
+
+
+        <!--Delete button-->
+        <td><a th:href="${'countryDetails/' + country.id}" class="btn btn-outline-danger btn-sm">Details </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+    <footer>
+        "Sheridan College"" Khushaliben Patel
+    </footer>
+</body>
+
+</html>
+
